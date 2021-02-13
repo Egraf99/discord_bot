@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-from discord.ext.commands import Bot
 
 bot = commands.Bot(command_prefix='/')
 
@@ -16,4 +15,4 @@ async def info(ctx, user: discord.User):
     emb.add_field(name='Name', value=user.name)
     await ctx.channel.send(embed=emb)
 
-bot.run('ODA3Njg2ODY2NjE4MDIzOTc2.YB7nAw.NQNVMus39broZRHKtDbR0Ai2Xok')
+bot.run('#your_token')
