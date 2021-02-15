@@ -4,7 +4,7 @@ from config import settings
 import discord
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix=settings['prefix'])
+bot = commands.Bot(command_prefix='prefix')
 
 
 @bot.event
@@ -29,7 +29,7 @@ async def __idea(ctx, *args):
     emb.set_footer(text=ctx.message.author.name, icon_url=ctx.message.author.avatar_url)
 
     # send Embed with author to the other channel
-    other_channel = bot.get_channel(id=settings['copy_id'])
+    other_channel = bot.get_channel(id='copy_id')
     await other_channel.send('жду шоколадку и идея от {}'.format(ctx.message.author.name))
     message = await other_channel.send(embed=emb)
 
@@ -40,4 +40,4 @@ async def __idea(ctx, *args):
     # delete message
     await ctx.message.delete()
 
-bot.run(settings['token'])
+bot.run('token')
