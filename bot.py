@@ -19,18 +19,23 @@ async def __idea(ctx, *args):
     col = randint(0, 16777215)
 
     # save send message
-    desc = ''
+    idea = ''
     for mes in args:
-        desc += mes + ' '
+        idea += mes + ' '
 
     # made Embed
-    emb = discord.Embed(title='!идея', description=desc,
+    emb = discord.Embed(title=idea, description='!идея',
                         colour=col, timestamp=datetime.utcnow())
     emb.set_footer(text=ctx.message.author.name, icon_url=ctx.message.author.avatar_url)
 
-    # send Embed to the other channel
+    # send Embed with author to the other channel
     other_channel = bot.get_channel(id=settings['copy_id'])
-    await other_channel.send(embed=emb)
+    await other_channel.send('жду шоколадку и идея от {}'.format(ctx.message.author.name))
+    message = await other_channel.send(embed=emb)
+
+    # add reactions
+    await message.add_reaction('⬆')
+    await message.add_reaction('⬇')
 
     # delete message
     await ctx.message.delete()
