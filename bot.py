@@ -1,6 +1,5 @@
 from datetime import datetime
 from random import randint
-from config import settings
 import discord
 from discord.ext import commands
 
