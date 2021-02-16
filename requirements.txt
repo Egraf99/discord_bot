@@ -1,6 +1,6 @@
-datetime
+datetime~=4.3
 config
-discord.py
+discord
 aiohttp
 websockets
 chardet
