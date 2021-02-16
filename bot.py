@@ -2,6 +2,7 @@ from datetime import datetime
 from random import randint
 import discord
 from discord.ext import commands
+import os
 
 bot = commands.Bot(command_prefix='prefix')
 
@@ -39,4 +40,5 @@ async def __idea(ctx, *args):
     # delete message
     await ctx.message.delete()
 
-bot.run('token')
+token = os.environ.get('token')
+bot.run(token)
