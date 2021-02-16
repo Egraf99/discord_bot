@@ -40,5 +40,5 @@ async def __idea(ctx, *args):
     # delete message
     await ctx.message.delete()
 
-#token = os.environ.get('token')
-bot.run('token')
+token = os.environ.get('token')
+bot.run(token)
