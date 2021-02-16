@@ -12,8 +12,8 @@ async def on_ready():
     print('Bot gone')
 
 
-@bot.command(pass_context=True, aliases=['идея'])
-async def __idea(ctx, *args):
+@bot.command(pass_context=True)
+async def идея(ctx, *args):
     
     # choice random color of Embed
     col = randint(0, 16777215)
