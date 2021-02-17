@@ -5,7 +5,6 @@ from discord.ext import commands
 import os
 
 bot = commands.Bot(command_prefix=os.environ['prefix'])
-print(os.environ['prefix'])
 
 
 @bot.event
@@ -41,7 +40,6 @@ async def идея(ctx, *args):
     # delete message
     await ctx.message.delete()
     
-    print('command executed')
 
 bot_token = os.environ['token']
 bot.run(bot_token)
