@@ -31,7 +31,6 @@ async def идея(ctx, *args):
     # send Embed with author to the other channel
     await bot.get_channel(id=os.environ['copy_id']).send('жду шоколадку и идея от {}'.format(ctx.message.author.mention))
     message = await bot.get_channel(id=os.environ['copy_id']).send(embed=emb)
-    print(type(message))
 
     # add reactions
     await message.add_reaction('⬆')
