@@ -1,7 +1,2 @@
-datetime~=4.3
-config
-discord
-discord.py
-aiohttp
-websockets
-chardet
+discord.py==1.6.0
+discord==1.0.1
