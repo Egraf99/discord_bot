@@ -4,7 +4,7 @@ import discord
 from discord.ext import commands
 import os
 
-bot = commands.Bot(command_prefix=prefix)
+bot = commands.Bot(command_prefix=os.environ['prefix'])
 print(prefix)
 
 
@@ -30,7 +30,7 @@ async def идея(ctx, *args):
     emb.set_footer(text=ctx.message.author.name, icon_url=ctx.message.author.avatar_url)
 
     # send Embed with author to the other channel
-    other_channel = bot.get_channel(id=copy_id)
+    other_channel = bot.get_channel(id=os.environ['copy_id'])
     await other_channel.send('жду шоколадку и идея от {}'.format(ctx.message.author.name))
     message = await other_channel.send(embed=emb)
 
@@ -43,5 +43,5 @@ async def идея(ctx, *args):
     
     print('command executed')
 
-bot_token = os.environ.get(token)
+bot_token = os.environ['token']
 bot.run(bot_token)
