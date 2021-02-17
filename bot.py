@@ -5,6 +5,7 @@ from discord.ext import commands
 import os
 
 bot = commands.Bot(command_prefix='prefix')
+print('prefix')
 
 
 @bot.event
